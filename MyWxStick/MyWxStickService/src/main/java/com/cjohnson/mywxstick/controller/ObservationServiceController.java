@@ -10,10 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.cjohnson.mywxstick.db.ObservationService;
 import com.cjohnson.mywxstick.model.SensorValue;
 import com.cjohnson.mywxstick.model.Observation;
+import com.cjohnson.mywxstick.model.ObservationType;
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -56,6 +58,24 @@ public class ObservationServiceController {
 		return ob;
 	}
 	
+	@RequestMapping(value = "/addob/{station}", method = RequestMethod.POST)
+	public Observation postObservation(@RequestBody String body)
+	{
+		Observation ob = Observation.MakeObservationFromJSON(body);
+		Date now = Calendar.getInstance(TimeZone.getTimeZone("UTC")).getTime();
+		ob.setObTime(now);
+		
+		// TODO: implement a local cache of any observations of
+		//       type InstantaneousObservations otherwise, add the observation to
+		//		 the database
+		if(ObservationType.INSTANTANEOUS_OBSERVATION != ob.getObservationType())
+		{
+			m_obService.addObservation(ob);
+		}
+		
+		return ob;
+	}
+
 	/*
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET,headers="Accept=application/json")
 	public User getUser(@PathVariable int id) {

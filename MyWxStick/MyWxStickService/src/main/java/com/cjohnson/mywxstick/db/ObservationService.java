@@ -26,13 +26,16 @@ public class ObservationService {
 		try {
 			
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into observations_test(time,temperature_air,humidity,temperature_water,wind_speed) values (?, ?, ?, ?, ?)");
+					.prepareStatement("insert into observations_test(time,temperature_air,humidity,temperature_water,wind_speed,altimeter,sea_level_pressure,ob_type) values (?, ?, ?, ?, ?, ?, ?, ?)");
 			// Parameters start with 1
 			preparedStatement.setTimestamp(1, new Timestamp(ob.getObTime().getTime()));
 			preparedStatement.setFloat(2, ob.getTemperatureAir());
 			preparedStatement.setFloat(3, ob.getHumidity());
 			preparedStatement.setFloat(4, ob.getTemperatureWater());			
 			preparedStatement.setFloat(5, ob.getWindSpeed());
+			preparedStatement.setFloat(6, ob.getAltimeter());
+			preparedStatement.setFloat(7, ob.getSeaLevelPressure());
+			preparedStatement.setInt(8, ob.getObservationType().ordinal());
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {

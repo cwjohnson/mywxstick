@@ -42,13 +42,22 @@ Visit http://www.arduino.cc to learn about the Arduino.
 Version 2.0 6/2012 MDG
 */
 
+#include <Wire.h>
+#include <Adafruit_Sensor.h>
+#include <Adafruit_BMP085_U.h>
 #include "dht.h"
+#include "observation.h"
 
-// We'll use analog input 0 to measure the temperature sensor's
-// signal pin.
+#define SHOW_INSTANTANEOUS_OBS 1
+Adafruit_BMP085_Unified bmp = Adafruit_BMP085_Unified(8085);
 
+// Station altitude (meters)
+#define STATION_ALTITUDE 286       /* Cross Plains */
+
+// temperature and humidity sensor
 #define DHT22_PIN 6
 
+int numberJsonValues = 0;
 const int temperaturePin = 0;
 const int potentiometerPin = 1;
 
@@ -58,10 +67,44 @@ const float potentiometerMinC = -10.0;
 const byte MODE_OFF = 0;
 const byte MODE_COOL = 1;
 const byte MODE_HEAT = 2;
+//#define SHOW_INSTANTANEOUS_OBS   1
+#define ONE_MINUTE_OB_DURATION   60000   // 60 seconds to average the ob
+#define FIVE_MINUTE_OB_DURATION  300000  // 5 minutes
 
 const byte mode = MODE_HEAT;
 
+Observation * instantOb = new Observation("InstantaneousObservation");
+Observation * oneMinuteOb = new Observation("OneMinuteObservation");
+Observation * fiveMinuteOb = new Observation("FiveMinuteObservation");
+
+unsigned long tOneMinuteObStart = millis();
+unsigned long t5MinuteObStart = tOneMinuteObStart;
+
 dht DHT;
+boolean havePressure = false;
+
+/**************************************************************************/
+/*
+    Displays some basic information on this sensor from the unified
+    sensor API sensor_t type (see Adafruit_Sensor for more information)
+*/
+/**************************************************************************/
+void displayPressureSensorDetails(void)
+{
+  sensor_t sensor;
+  if (havePressure) {
+    bmp.getSensor(&sensor);
+    Serial.println("------------------------------------");
+    Serial.print  ("Sensor:       "); Serial.println(sensor.name);
+    Serial.print  ("Driver Ver:   "); Serial.println(sensor.version);
+    Serial.print  ("Unique ID:    "); Serial.println(sensor.sensor_id);
+    Serial.print  ("Max Value:    "); Serial.print(sensor.max_value); Serial.println(" hPa");
+    Serial.print  ("Min Value:    "); Serial.print(sensor.min_value); Serial.println(" hPa");
+    Serial.print  ("Resolution:   "); Serial.print(sensor.resolution); Serial.println(" hPa");
+    Serial.println("------------------------------------");
+    Serial.println("");
+  }
+}
 
 void setup()
 {
@@ -77,19 +120,37 @@ void setup()
   
   Serial.begin(115200);
   pinMode(ledPin, OUTPUT);
+  
+  // initialize pressure sensor (BMP085)
+  havePressure = bmp.begin();
+  while (!havePressure)
+  {
+    // TODO: return error messages as json structure
+    Serial.print("ERROR: no BMP085 detected ... Check your wiring or I2C Addr!");
+    havePressure = bmp.begin();
+  }
+//  else
+  {
+    displayPressureSensorDetails();
+  }
 }
 
 
 void loop()
 {
-  // Up to now we've only used integer ("int") values in our
-  // sketches. Integers are always whole numbers (0, 1, 23, etc.).
-  // In this sketch, we'll use floating-point values ("float").
-  // Floats can be fractional numbers such as 1.42, 2523.43121, etc.
-
-  // We'll declare three floating-point variables
-  // (We can declare multiple variables of the same type on one line:)
-
+  //displayPressureSensorDetails();
+  
+  // read atmospheric pressure
+  sensors_event_t bmpEvent;
+  bmp.getEvent(&bmpEvent);
+  
+  //if (bmpEvent.pressure)
+  //{
+  //  Serial.print("Pressure:   ");
+  //  Serial.print(bmpEvent.pressure);
+  //  Serial.println(" hPa");
+  //}
+  
   float voltage, degreesC, degreesF;
   float potentiometerValueC;
   float dhtTemperature, dhtHumidity;
@@ -117,7 +178,7 @@ void loop()
   switch (chk)
   {
     case DHTLIB_OK:
-      Serial.println("read22: OK");
+      //Serial.println("read22: OK");
       dhtTemperature = DHT.temperature;
       dhtHumidity = DHT.humidity;
       break;
@@ -154,12 +215,49 @@ void loop()
   // we use the Serial.print() function. You can print variables
   // or text (within quotes).
 
-  printJSONBeginObject("Observation");
-  printJSONValue("TemperatureAir", dhtTemperature);
-  printJSONValue("Humidity", dhtHumidity);
-  printJSONEndObject();
-  Serial.println("");
+  // Add the temperature and humidity to the observation objects
+  float bmpTemperature;
+  bmp.getTemperature(&bmpTemperature);
+  float SLP = bmp.seaLevelForAltitude(STATION_ALTITUDE, bmpEvent.pressure, bmpTemperature);
+  float altimeter = 0.0295300*bmpEvent.pressure;
+  instantOb->addTempAir(dhtTemperature);
+  instantOb->addHumidity(dhtHumidity);
+  instantOb->addAltimeter(altimeter);
+  instantOb->addSeaLevelPressure(SLP);
+  oneMinuteOb->addTempAir(dhtTemperature);
+  oneMinuteOb->addHumidity(dhtHumidity);
+  oneMinuteOb->addAltimeter(altimeter);
+  oneMinuteOb->addSeaLevelPressure(SLP);
+  fiveMinuteOb->addTempAir(dhtTemperature);
+  fiveMinuteOb->addHumidity(dhtHumidity);
+  fiveMinuteOb->addAltimeter(altimeter);
+  fiveMinuteOb->addSeaLevelPressure(SLP);
   
+  // print the instant ob on every cycle
+  #ifdef SHOW_INSTANTANEOUS_OBS
+  instantOb->serialWriteJSON();
+  instantOb->reset();
+  Serial.println("");
+  #endif
+ 
+  // publish the one minute ob every ONE_MINUTE_OB_DURATION
+  unsigned long tNow = millis();
+  if (tNow - tOneMinuteObStart > ONE_MINUTE_OB_DURATION)
+  {
+    oneMinuteOb->serialWriteJSON();
+    oneMinuteOb->reset();
+    Serial.println("");
+    tOneMinuteObStart = tNow;
+  }
+  
+  if (tNow - t5MinuteObStart > FIVE_MINUTE_OB_DURATION)
+  {
+    fiveMinuteOb->serialWriteJSON();
+    fiveMinuteOb->reset();
+    Serial.println("");
+    t5MinuteObStart = tNow;
+  }
+
   // These statements will print lines of data like this:
   // "voltage: 0.73 deg C: 22.75 deg F: 72.96"
 
@@ -197,8 +295,10 @@ void loop()
 
 void printJSONBeginObject(char *name)
 {
+  numberJsonValues = 0;
+  
   Serial.print(name);
-  Serial.print("{");
+  Serial.print(" {");
 }
 void printJSONEndObject()
 {
@@ -206,11 +306,16 @@ void printJSONEndObject()
 }
 void printJSONValue(char *name, float value)
 {
+  if (numberJsonValues > 0)
+  {
+  Serial.print(",\"");
+  } else {
   Serial.print("\"");
+  }
   Serial.print(name);
   Serial.print("\":");
   Serial.print(value);
-  Serial.print(",");
+  ++numberJsonValues;
 }
 
 float getVoltage(int pin)
@@ -267,4 +372,5 @@ float fmap(float x, float in_min, float in_max, float out_min, float out_max)
 
 //   Read that threshold value from a potentiometer - now you've
 //   created a thermostat!
+
 

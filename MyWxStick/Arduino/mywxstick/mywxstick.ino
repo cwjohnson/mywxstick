@@ -43,13 +43,30 @@ Version 2.0 6/2012 MDG
 */
 
 #include <Wire.h>
-#include <Adafruit_Sensor.h>
-#include <Adafruit_BMP085_U.h>
-#include "dht.h"
+#include <Adafruit_Sensor.h>      // Pressure Sensor
+#include <Adafruit_BMP085_U.h>    // Pressure Sensor BMP085
+#include <OneWire.h>              // OneWire protocol required for Dallas Temperature
+#include <DallasTemperature.h>    // Water Temperature sensor DS18B20
+#include "dht.h"                  // DHT 22 Temperature and Humidity
 #include "observation.h"
 
 #define SHOW_INSTANTANEOUS_OBS 1
+#define ONE_WIRE_BUS 12
+
 Adafruit_BMP085_Unified bmp = Adafruit_BMP085_Unified(8085);
+// A single oneWire instance to communicate with any and all OneWire devices (not just Maxim/Dallas Temperature ICs)
+// Many temperature sensors may reside on the OneWire bus
+///
+// Twinklefilter 157.5"（4m）IP65 Waterproof Digital Thermal Probe Temperature Sensor DS18B20 for Rasberry Pi or Arduino
+//     Waterproof : IP65 to protect against ingress of dust and against standard water
+//     Power supply range:3.0V-5.5V
+//     Output lead: red (VCC), white(DATA) , black(GND)
+OneWire oneWire(ONE_WIRE_BUS);
+DallasTemperature oneWireTempSensors (&oneWire);
+
+DeviceAddress waterThermometerAddress = { 0x28, 0xF3, 0x91, 0xF9, 0x05, 0x00, 0x00, 0x98 }; // Twinklefilter 157.5"（4m）IP65 Waterproof Digital Thermal Probe Temperature Sensor DS18B20 for Rasberry Pi or Arduino
+int waterThermometerIndex = -1;
+#define WATER_THERMOMETER_PRECISION 9  // bits of precision of sensed water temperature
 
 // Station altitude (meters)
 #define STATION_ALTITUDE 286       /* Cross Plains */
@@ -94,15 +111,15 @@ void displayPressureSensorDetails(void)
   sensor_t sensor;
   if (havePressure) {
     bmp.getSensor(&sensor);
-    Serial.println("------------------------------------");
-    Serial.print  ("Sensor:       "); Serial.println(sensor.name);
-    Serial.print  ("Driver Ver:   "); Serial.println(sensor.version);
-    Serial.print  ("Unique ID:    "); Serial.println(sensor.sensor_id);
-    Serial.print  ("Max Value:    "); Serial.print(sensor.max_value); Serial.println(" hPa");
-    Serial.print  ("Min Value:    "); Serial.print(sensor.min_value); Serial.println(" hPa");
-    Serial.print  ("Resolution:   "); Serial.print(sensor.resolution); Serial.println(" hPa");
-    Serial.println("------------------------------------");
-    Serial.println("");
+    Serial.println("# -------------------------------------");
+    Serial.print  ("# Sensor:       "); Serial.println(sensor.name);
+    Serial.print  ("# Driver Ver:   "); Serial.println(sensor.version);
+    Serial.print  ("# Unique ID:    "); Serial.println(sensor.sensor_id);
+    Serial.print  ("# Max Value:    "); Serial.print(sensor.max_value); Serial.println(" hPa");
+    Serial.print  ("# Min Value:    "); Serial.print(sensor.min_value); Serial.println(" hPa");
+    Serial.print  ("# Resolution:   "); Serial.print(sensor.resolution); Serial.println(" hPa");
+    Serial.println("# ------------------------------------");
+    Serial.println("#");
   }
 }
 
@@ -120,46 +137,94 @@ void setup()
   
   Serial.begin(115200);
   pinMode(ledPin, OUTPUT);
-  
+  Serial.println();
+  Serial.println("# Looking for BMP085 pressure sensor");
   // initialize pressure sensor (BMP085)
   havePressure = bmp.begin();
   while (!havePressure)
   {
     // TODO: return error messages as json structure
-    Serial.print("ERROR: no BMP085 detected ... Check your wiring or I2C Addr!");
+    Serial.print("# ERROR: no BMP085 detected ... Check your wiring or I2C Addr!");
     havePressure = bmp.begin();
   }
 //  else
   {
     displayPressureSensorDetails();
   }
+  
+  // startup the DallasTemperature OneWire library
+  oneWireTempSensors.begin();
+  
+  // locate devices on the OneWire bus
+  int oneWireDeviceCount = oneWireTempSensors.getDeviceCount();
+  Serial.print ("# Locating OneWire devices...");
+  Serial.print ("Found ");
+  Serial.print(oneWireDeviceCount, DEC);
+  Serial.println(" device(s).");
+  
+  for (int index = 0 ; index < oneWireDeviceCount ; index++)
+  {
+    DeviceAddress addr;
+    if  (!oneWireTempSensors.getAddress(addr, index)) {
+      Serial.print("# Unable to find address for Device ");
+      Serial.print(index, DEC);
+      Serial.println(".");
+      continue;
+    }
+    // show the addresses we found on the bus
+    Serial.print("# Device ");
+    Serial.print(index, DEC);
+    Serial.print(" Address: ");
+    printAddress(addr);
+    Serial.println();
+    if (memcmp(addr, waterThermometerAddress, sizeof(DeviceAddress)) == 0) {
+      waterThermometerIndex = index;
+    }
+  }
+  // did we find a waterTemperature Sensor
+  if (waterThermometerIndex > -1) {
+    Serial.print("# Found water thermometer ");
+    printAddress(waterThermometerAddress);
+    Serial.print(" at index: ");
+    Serial.println(waterThermometerIndex, DEC);
+    int resolution = oneWireTempSensors.getResolution(waterThermometerAddress);
+    if (resolution != WATER_THERMOMETER_PRECISION) {
+      Serial.println("# Setting solution of water thermometer to ");
+      Serial.print(WATER_THERMOMETER_PRECISION, DEC);
+      Serial.println("-bits");
+      oneWireTempSensors.setResolution(waterThermometerAddress, WATER_THERMOMETER_PRECISION);
+    }
+    Serial.print("# Resolution of water thermometer is ");
+    Serial.print(resolution, DEC);
+    Serial.println("-bits");
+    
+  } else {
+    Serial.print("# Water thermometer: ");
+    printAddress(waterThermometerAddress);
+    Serial.println(" not found");
+  }
 }
 
 
 void loop()
 {
-  //displayPressureSensorDetails();
   
   // read atmospheric pressure
   sensors_event_t bmpEvent;
   bmp.getEvent(&bmpEvent);
   
-  //if (bmpEvent.pressure)
-  //{
-  //  Serial.print("Pressure:   ");
-  //  Serial.print(bmpEvent.pressure);
-  //  Serial.println(" hPa");
-  //}
-  
-  float voltage, degreesC, degreesF;
-  float potentiometerValueC;
-  float dhtTemperature, dhtHumidity;
-
+  // this reads the voltage temperature IC....not the DHT22
+  // this is read only as an exercise of converting voltage
+  // to a value.
   // First we'll measure the voltage at the analog pin. Normally
   // we'd use analogRead(), which returns a number from 0 to 1023.
   // Here we've written a function (further down) called
   // getVoltage() that returns the true voltage (0 to 5 Volts)
   // present on an analog input pin.
+
+  float voltage, degreesC, degreesF;
+  float potentiometerValueC;
+  float dhtTemperature, dhtHumidity;
 
   voltage = getVoltage(temperaturePin);
   potentiometerValueC = getPotentiometerValue(potentiometerPin);
@@ -174,6 +239,7 @@ void loop()
   
   degreesF = degreesC * (9.0/5.0) + 32.0;
   
+  // OK...read from DHT22....this is what we will use in production
   int chk = DHT.read22(DHT22_PIN);
   switch (chk)
   {
@@ -192,46 +258,29 @@ void loop()
       Serial.println("read22: Unknown error");
       break;
   }
-  // Now we'll use the serial port to print these values
-  // to the serial monitor!
-  
-  // To open the serial monitor window, upload your code,
-  // then click the "magnifying glass" button at the right edge
-  // of the Arduino IDE toolbar. The serial monitor window
-  // will open.
 
-  // (NOTE: remember we said that the communication speed
-  // must be the same on both sides. Ensure that the baud rate
-  // control at the bottom of the window is set to 9600. If it
-  // isn't, change it to 9600.)
-  
-  // Also note that every time you upload a new sketch to the
-  // Arduino, the serial monitor window will close. It does this
-  // because the serial port is also used to upload code!
-  // When the upload is complete, you can re-open the serial
-  // monitor window.
-  
-  // To send data from the Arduino to the serial monitor window,
-  // we use the Serial.print() function. You can print variables
-  // or text (within quotes).
-
-  // Add the temperature and humidity to the observation objects
+  // Add the sensed values to the observation objects; each observation object will average the values
+  // over a different time period
   float bmpTemperature;
   bmp.getTemperature(&bmpTemperature);
   float SLP = bmp.seaLevelForAltitude(STATION_ALTITUDE, bmpEvent.pressure, bmpTemperature);
   float altimeter = 0.0295300*bmpEvent.pressure;
+  float waterTemperature = getWaterTemperature(waterThermometerAddress);
   instantOb->addTempAir(dhtTemperature);
   instantOb->addHumidity(dhtHumidity);
   instantOb->addAltimeter(altimeter);
   instantOb->addSeaLevelPressure(SLP);
+  instantOb->addTempWater(waterTemperature);
   oneMinuteOb->addTempAir(dhtTemperature);
   oneMinuteOb->addHumidity(dhtHumidity);
   oneMinuteOb->addAltimeter(altimeter);
   oneMinuteOb->addSeaLevelPressure(SLP);
+  oneMinuteOb->addTempWater(waterTemperature);
   fiveMinuteOb->addTempAir(dhtTemperature);
   fiveMinuteOb->addHumidity(dhtHumidity);
   fiveMinuteOb->addAltimeter(altimeter);
   fiveMinuteOb->addSeaLevelPressure(SLP);
+  fiveMinuteOb->addTempWater(waterTemperature);
   
   // print the instant ob on every cycle
   #ifdef SHOW_INSTANTANEOUS_OBS
@@ -257,17 +306,9 @@ void loop()
     Serial.println("");
     t5MinuteObStart = tNow;
   }
-
-  // These statements will print lines of data like this:
-  // "voltage: 0.73 deg C: 22.75 deg F: 72.96"
-
-  // Note that all of the above statements are "print", except
-  // for the last one, which is "println". "Print" will output
-  // text to the SAME LINE, similar to building a sentence
-  // out of words. "Println" will insert a "carriage return"
-  // character at the end of whatever it prints, moving down
-  // to the NEXT line.
    
+  // as an exercise a potentiometer controls the switching of
+  // a led light based on temperature - like a thermostat
   switch (mode)
   {
     case MODE_HEAT:
@@ -290,6 +331,7 @@ void loop()
       digitalWrite (ledPin, LOW);
     break;
  }
+ 
   delay(1000); // repeat once per second (change as you wish!)
 }
 
@@ -366,11 +408,19 @@ float fmap(float x, float in_min, float in_max, float out_min, float out_max)
   return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }
 
-// Other things to try with this code:
+// function to print a device address
+void printAddress(DeviceAddress deviceAddress)
+{
+  for (uint8_t i = 0; i < 8; i++)
+  {
+    // zero pad the address if necessary
+    if (deviceAddress[i] < 16) Serial.print("0");
+    Serial.print(deviceAddress[i], HEX);
+  }
+}
 
-//   Turn on an LED if the temperature is above or below a value.
-
-//   Read that threshold value from a potentiometer - now you've
-//   created a thermostat!
-
-
+float getWaterTemperature(DeviceAddress deviceAddress)
+{
+  oneWireTempSensors.requestTemperaturesByAddress(deviceAddress);
+  return oneWireTempSensors.getTempC(deviceAddress);
+}

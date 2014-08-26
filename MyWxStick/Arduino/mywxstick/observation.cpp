@@ -14,6 +14,7 @@ Observation::Observation (char *n)
    windSpeed = 0.0;
    altimeterCnt = 0;
    seaLevelPressureCnt = 0;
+   tempWaterCnt = 0;
 }
 
 void Observation::reset(void)
@@ -23,12 +24,19 @@ void Observation::reset(void)
   windSpeedCnt = 0;
   altimeterCnt = 0;
   seaLevelPressureCnt = 0;
+  tempWaterCnt = 0;
 }
 
 void Observation::addTempAir(float t)
 {
   if (++tempAirCnt != 1)  tempAir += t;
   else                    tempAir = t;
+}
+
+void Observation::addTempWater(float t)
+{
+  if (++tempWaterCnt != 1)  tempWater += t;
+  else                      tempWater = t;
 }
 
 void Observation::addHumidity(float h)
@@ -63,6 +71,7 @@ void Observation::serialWriteJSON()
   printJSONValue("windSpeed", (windSpeedCnt > 0) ? windSpeed / (float)windSpeedCnt : 0.0);
   printJSONValue("altimeter", (altimeterCnt > 0) ? altimeter / (float)altimeterCnt : 0.0);
   printJSONValue("seaLevelPressure", (seaLevelPressureCnt > 0) ? seaLevelPressure / (float)seaLevelPressureCnt : 0.0);
+  printJSONValue("temperatureWater", (tempWaterCnt > 0) ? tempWater / (float)tempWaterCnt : 0.0);
   printJSONEndObject();
 }
 

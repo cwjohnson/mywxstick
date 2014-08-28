@@ -10,6 +10,7 @@ private:
   float altimeter;
   float seaLevelPressure;
   float tempWater;
+  float precipAccum;
   
   unsigned short tempAirCnt;
   unsigned short humidityCnt;
@@ -34,6 +35,7 @@ public:
   void addAltimeter(float p);
   void addSeaLevelPressure(float s);
   void addTempWater(float tw);
+  void addPrecip(float p);
   
   void reset(void);
   void serialWriteJSON();

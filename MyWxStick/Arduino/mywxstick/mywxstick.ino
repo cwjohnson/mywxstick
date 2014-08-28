@@ -1,47 +1,3 @@
-/*
-
-Example sketch 07
-
-TEMPERATURE SENSOR
-
-  Use the "serial monitor" window to read a temperature sensor.
-  
-  The TMP36 is an easy-to-use temperature sensor that outputs
-  a voltage that's proportional to the ambient temperature.
-  You can use it for all kinds of automation tasks where you'd
-  like to know or control the temperature of something.
-  
-  More information on the sensor is available in the datasheet:
-  http://dlnmh9ip6v2uc.cloudfront.net/datasheets/Sensors/Temp/TMP35_36_37.pdf
-
-  Even more exciting, we'll start using the Arduino's serial port
-  to send data back to your main computer! Up until now, we've 
-  been limited to using simple LEDs for output. We'll see that
-  the Arduino can also easily output all kinds of text and data.
-  
-Hardware connections:
-
-  Be careful when installing the temperature sensor, as it is
-  almost identical to the transistors! The one you want has 
-  a triangle logo and "TMP" in very tiny letters. The
-  ones you DON'T want will have "222" on them.
-
-  When looking at the flat side of the temperature sensor
-  with the pins down, from left to right the pins are:
-  5V, SIGNAL, and GND.
-  
-  Connect the 5V pin to 5 Volts (5V).
-  Connect the SIGNAL pin to ANALOG pin 0.
-  Connect the GND pin to ground (GND).
-
-This sketch was written by SparkFun Electronics,
-with lots of help from the Arduino community.
-This code is completely free for any use.
-Visit http://www.arduino.cc to learn about the Arduino.
-
-Version 2.0 6/2012 MDG
-*/
-
 #include <Wire.h>
 #include <Adafruit_Sensor.h>      // Pressure Sensor
 #include <Adafruit_BMP085_U.h>    // Pressure Sensor BMP085
@@ -49,6 +5,7 @@ Version 2.0 6/2012 MDG
 #include <DallasTemperature.h>    // Water Temperature sensor DS18B20
 #include "dht.h"                  // DHT 22 Temperature and Humidity
 #include "observation.h"
+#include "debounce.h"
 
 #define SHOW_INSTANTANEOUS_OBS 1
 #define ONE_WIRE_BUS 12
@@ -63,16 +20,37 @@ Adafruit_BMP085_Unified bmp = Adafruit_BMP085_Unified(8085);
 //     Output lead: red (VCC), white(DATA) , black(GND)
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature oneWireTempSensors (&oneWire);
-
 DeviceAddress waterThermometerAddress = { 0x28, 0xF3, 0x91, 0xF9, 0x05, 0x00, 0x00, 0x98 }; // Twinklefilter 157.5"（4m）IP65 Waterproof Digital Thermal Probe Temperature Sensor DS18B20 for Rasberry Pi or Arduino
 int waterThermometerIndex = -1;
 #define WATER_THERMOMETER_PRECISION 9  // bits of precision of sensed water temperature
+// Getting the water temperature synchronously get take a long time (up to 700ms at 12-bit precision).
+// This can cauase havoc with our detection of precipitation, because we need to detect a swinging magnet passing
+// over a reed switch.
+// So we want to send a request for the temperature, then pick it up when it is ready
+#define WAIT_FOR_WATER_TEMPERATURE false
+unsigned long delayReadWaterThermometer = 0;
+float lastWaterTemperature = -9999.0;
+unsigned long tLastWaterTemperatureRequest = 0;
 
 // Station altitude (meters)
 #define STATION_ALTITUDE 286       /* Cross Plains */
 
 // temperature and humidity sensor
 #define DHT22_PIN 6
+
+// precipitation tipping bucket
+//#define DEBUG_TIPPING_BUCKET 1
+#define TIPPING_BUCKET_PIN 4
+// tipping bucket quantity (inches) per tip
+#define TIPPING_BUCKET_QUANTITY 0.01
+#define TIPPING_BUCKET_DEBOUNCE_TIME 0.10
+#define TIPPING_BUCKET_SAMPLING_FREQUENCY 50
+Debounce debounceTippingBucket = Debounce(TIPPING_BUCKET_DEBOUNCE_TIME, TIPPING_BUCKET_SAMPLING_FREQUENCY);
+int lastTippingBucketState = -1;
+int tippingBucketBootstrapSamples = 0;
+float precipValue = 0.0;
+
+const int loopDelay = (1.0 / TIPPING_BUCKET_SAMPLING_FREQUENCY) * 1000;
 
 int numberJsonValues = 0;
 const int temperaturePin = 0;
@@ -96,6 +74,11 @@ Observation * fiveMinuteOb = new Observation("FiveMinuteObservation");
 
 unsigned long tOneMinuteObStart = millis();
 unsigned long t5MinuteObStart = tOneMinuteObStart;
+
+unsigned long tLastSensorGroupSample = millis();
+// sample sensors every second
+#define SENSOR_SAMPLE_FREQUENCY 1
+#define SENSOR_SAMPLE_INTERVAL_MS (1000 / SENSOR_SAMPLE_FREQUENCY)
 
 dht DHT;
 boolean havePressure = false;
@@ -137,6 +120,7 @@ void setup()
   
   Serial.begin(115200);
   pinMode(ledPin, OUTPUT);
+  pinMode(TIPPING_BUCKET_PIN, INPUT);
   Serial.println();
   Serial.println("# Looking for BMP085 pressure sensor");
   // initialize pressure sensor (BMP085)
@@ -197,7 +181,13 @@ void setup()
     Serial.print("# Resolution of water thermometer is ");
     Serial.print(resolution, DEC);
     Serial.println("-bits");
-    
+    // setup the initial read request (asynchronously)
+    oneWireTempSensors.setWaitForConversion(WAIT_FOR_WATER_TEMPERATURE);
+    delayReadWaterThermometer = 750 / (1 << (12 - WATER_THERMOMETER_PRECISION));    
+    if (WAIT_FOR_WATER_TEMPERATURE) {
+      oneWireTempSensors.requestTemperaturesByAddress(waterThermometerAddress);
+      tLastWaterTemperatureRequest = millis();
+    }
   } else {
     Serial.print("# Water thermometer: ");
     printAddress(waterThermometerAddress);
@@ -205,134 +195,185 @@ void setup()
   }
 }
 
-
 void loop()
 {
   
-  // read atmospheric pressure
-  sensors_event_t bmpEvent;
-  bmp.getEvent(&bmpEvent);
+  // always read the precipitation, sampled more often because we don't want to miss a swing of the bucket
+  // as the magnet passes over the reed switch
+  precipValue += readTippingBucket(TIPPING_BUCKET_PIN);
   
-  // this reads the voltage temperature IC....not the DHT22
-  // this is read only as an exercise of converting voltage
-  // to a value.
-  // First we'll measure the voltage at the analog pin. Normally
-  // we'd use analogRead(), which returns a number from 0 to 1023.
-  // Here we've written a function (further down) called
-  // getVoltage() that returns the true voltage (0 to 5 Volts)
-  // present on an analog input pin.
-
-  float voltage, degreesC, degreesF;
-  float potentiometerValueC;
-  float dhtTemperature, dhtHumidity;
-
-  voltage = getVoltage(temperaturePin);
-  potentiometerValueC = getPotentiometerValue(potentiometerPin);
-  
-  // Now we'll convert the voltage to degrees Celsius.
-  // This formula comes from the temperature sensor datasheet:
-
-  degreesC = (voltage - 0.5) * 100.0;
-  
-  // While we're at it, let's convert degrees Celsius to Fahrenheit.
-  // This is the classic C to F conversion formula:
-  
-  degreesF = degreesC * (9.0/5.0) + 32.0;
-  
-  // OK...read from DHT22....this is what we will use in production
-  int chk = DHT.read22(DHT22_PIN);
-  switch (chk)
-  {
-    case DHTLIB_OK:
-      //Serial.println("read22: OK");
-      dhtTemperature = DHT.temperature;
-      dhtHumidity = DHT.humidity;
-      break;
-    case DHTLIB_ERROR_CHECKSUM:
-      Serial.println("read22: Checksum error");
-      break;
-    case DHTLIB_ERROR_TIMEOUT:
-      Serial.println("read22: Timeout");
-      break;
-    default:
-      Serial.println("read22: Unknown error");
-      break;
-  }
-
-  // Add the sensed values to the observation objects; each observation object will average the values
-  // over a different time period
-  float bmpTemperature;
-  bmp.getTemperature(&bmpTemperature);
-  float SLP = bmp.seaLevelForAltitude(STATION_ALTITUDE, bmpEvent.pressure, bmpTemperature);
-  float altimeter = 0.0295300*bmpEvent.pressure;
-  float waterTemperature = getWaterTemperature(waterThermometerAddress);
-  instantOb->addTempAir(dhtTemperature);
-  instantOb->addHumidity(dhtHumidity);
-  instantOb->addAltimeter(altimeter);
-  instantOb->addSeaLevelPressure(SLP);
-  instantOb->addTempWater(waterTemperature);
-  oneMinuteOb->addTempAir(dhtTemperature);
-  oneMinuteOb->addHumidity(dhtHumidity);
-  oneMinuteOb->addAltimeter(altimeter);
-  oneMinuteOb->addSeaLevelPressure(SLP);
-  oneMinuteOb->addTempWater(waterTemperature);
-  fiveMinuteOb->addTempAir(dhtTemperature);
-  fiveMinuteOb->addHumidity(dhtHumidity);
-  fiveMinuteOb->addAltimeter(altimeter);
-  fiveMinuteOb->addSeaLevelPressure(SLP);
-  fiveMinuteOb->addTempWater(waterTemperature);
-  
-  // print the instant ob on every cycle
-  #ifdef SHOW_INSTANTANEOUS_OBS
-  instantOb->serialWriteJSON();
-  instantOb->reset();
-  Serial.println("");
-  #endif
- 
-  // publish the one minute ob every ONE_MINUTE_OB_DURATION
   unsigned long tNow = millis();
-  if (tNow - tOneMinuteObStart > ONE_MINUTE_OB_DURATION)
+  if (tNow - tLastSensorGroupSample >= SENSOR_SAMPLE_INTERVAL_MS)
   {
-    oneMinuteOb->serialWriteJSON();
-    oneMinuteOb->reset();
-    Serial.println("");
-    tOneMinuteObStart = tNow;
-  }
+    tLastSensorGroupSample = tNow;
+    
+    // read atmospheric pressure
+    sensors_event_t bmpEvent;
+    bmp.getEvent(&bmpEvent);
+    
+    // this reads the voltage temperature IC....not the DHT22
+    // this is read only as an exercise of converting voltage
+    // to a value.
+    // First we'll measure the voltage at the analog pin. Normally
+    // we'd use analogRead(), which returns a number from 0 to 1023.
+    // Here we've written a function (further down) called
+    // getVoltage() that returns the true voltage (0 to 5 Volts)
+    // present on an analog input pin.
   
-  if (tNow - t5MinuteObStart > FIVE_MINUTE_OB_DURATION)
-  {
-    fiveMinuteOb->serialWriteJSON();
-    fiveMinuteOb->reset();
+    float voltage, degreesC, degreesF;
+    float potentiometerValueC;
+    float dhtTemperature, dhtHumidity;
+  
+    voltage = getVoltage(temperaturePin);
+    potentiometerValueC = getPotentiometerValue(potentiometerPin);
+    
+    // Now we'll convert the voltage to degrees Celsius.
+    // This formula comes from the temperature sensor datasheet:
+  
+    degreesC = (voltage - 0.5) * 100.0;
+    
+    // While we're at it, let's convert degrees Celsius to Fahrenheit.
+    // This is the classic C to F conversion formula:
+    
+    degreesF = degreesC * (9.0/5.0) + 32.0;
+    
+    // OK...read from DHT22....this is what we will use in production
+    int chk = DHT.read22(DHT22_PIN);
+    switch (chk)
+    {
+      case DHTLIB_OK:
+        //Serial.println("read22: OK");
+        dhtTemperature = DHT.temperature;
+        dhtHumidity = DHT.humidity;
+        break;
+      case DHTLIB_ERROR_CHECKSUM:
+        Serial.println("read22: Checksum error");
+        break;
+      case DHTLIB_ERROR_TIMEOUT:
+        Serial.println("read22: Timeout");
+        break;
+      default:
+        Serial.println("read22: Unknown error");
+        break;
+    }
+  
+    // Add the sensed values to the observation objects; each observation object will average the values
+    // over a different time period
+    float bmpTemperature;
+    bmp.getTemperature(&bmpTemperature);
+    float SLP = bmp.seaLevelForAltitude(STATION_ALTITUDE, bmpEvent.pressure, bmpTemperature);
+    float altimeter = 0.0295300*bmpEvent.pressure;
+    float waterTemperature = getWaterTemperature(waterThermometerAddress);
+    instantOb->addTempAir(dhtTemperature);
+    instantOb->addHumidity(dhtHumidity);
+    instantOb->addAltimeter(altimeter);
+    instantOb->addSeaLevelPressure(SLP);
+    oneMinuteOb->addTempAir(dhtTemperature);
+    oneMinuteOb->addHumidity(dhtHumidity);
+    oneMinuteOb->addAltimeter(altimeter);
+    oneMinuteOb->addSeaLevelPressure(SLP);
+    fiveMinuteOb->addTempAir(dhtTemperature);
+    fiveMinuteOb->addHumidity(dhtHumidity);
+    fiveMinuteOb->addAltimeter(altimeter);
+    fiveMinuteOb->addSeaLevelPressure(SLP);
+    
+    if (waterTemperature > -9000.0) {
+      instantOb->addTempWater(waterTemperature);
+      oneMinuteOb->addTempWater(waterTemperature);
+      fiveMinuteOb->addTempWater(waterTemperature);
+    }
+    
+    instantOb->addPrecip(precipValue);
+    oneMinuteOb->addPrecip(precipValue);
+    fiveMinuteOb->addPrecip(precipValue);
+    precipValue = 0.0;
+    
+    // print the instant ob on every cycle
+    #ifdef SHOW_INSTANTANEOUS_OBS
+    instantOb->serialWriteJSON();
+    instantOb->reset();
     Serial.println("");
-    t5MinuteObStart = tNow;
-  }
+    #endif
    
-  // as an exercise a potentiometer controls the switching of
-  // a led light based on temperature - like a thermostat
-  switch (mode)
+    // publish the one minute ob every ONE_MINUTE_OB_DURATION
+    if (tNow - tOneMinuteObStart > ONE_MINUTE_OB_DURATION)
+    {
+      oneMinuteOb->serialWriteJSON();
+      oneMinuteOb->reset();
+      Serial.println("");
+      tOneMinuteObStart = tNow;
+    }
+    
+    if (tNow - t5MinuteObStart > FIVE_MINUTE_OB_DURATION)
+    {
+      fiveMinuteOb->serialWriteJSON();
+      fiveMinuteOb->reset();
+      Serial.println("");
+      t5MinuteObStart = tNow;
+    }
+     
+    // as an exercise a potentiometer controls the switching of
+    // a led light based on temperature - like a thermostat
+    switch (mode)
+    {
+      case MODE_HEAT:
+        if (degreesC < potentiometerValueC) {
+          digitalWrite (ledPin, HIGH);
+        }
+        else {
+          digitalWrite (ledPin, LOW);
+        }
+      break;
+      case MODE_COOL:
+        if (degreesC < potentiometerValueC) {
+          digitalWrite (ledPin, LOW);
+        } else {
+          digitalWrite (ledPin, HIGH);
+        }
+      break;
+      case MODE_OFF:
+      default:
+        digitalWrite (ledPin, LOW);
+      break;
+   }
+  } // SENSOR_SAMPLE_INTERVAL_MS exceeded
+  delay(loopDelay);
+}
+
+// read the tipping bucket
+float readTippingBucket(int pin)
+{
+  int pinValue = digitalRead (pin);
+  int value = debounceTippingBucket.debounce(pinValue);
+
+  if (lastTippingBucketState == -1)
   {
-    case MODE_HEAT:
-      if (degreesC < potentiometerValueC) {
-        digitalWrite (ledPin, HIGH);
-      }
-      else {
-        digitalWrite (ledPin, LOW);
-      }
-    break;
-    case MODE_COOL:
-      if (degreesC < potentiometerValueC) {
-        digitalWrite (ledPin, LOW);
-      } else {
-        digitalWrite (ledPin, HIGH);
-      }
-    break;
-    case MODE_OFF:
-    default:
-      digitalWrite (ledPin, LOW);
-    break;
- }
- 
-  delay(1000); // repeat once per second (change as you wish!)
+    unsigned long tNow = millis();
+    if (tippingBucketBootstrapSamples < TIPPING_BUCKET_DEBOUNCE_TIME * TIPPING_BUCKET_SAMPLING_FREQUENCY)
+    {
+      ++tippingBucketBootstrapSamples;
+      return 0.0;
+    }
+      
+      lastTippingBucketState = value;
+  }
+
+  float accum = 0.0;
+  
+  // if was low (passing through reed switch), but is now high (resting or on it's way to resting), then we accumulate
+  if (lastTippingBucketState == LOW && value == HIGH) accum = TIPPING_BUCKET_QUANTITY;
+  
+  lastTippingBucketState = value;
+  
+#ifdef DEBUG_TIPPING_BUCKET
+  Serial.print("# Tipping Bucket pinValue: ");
+  Serial.print(pinValue, DEC);
+  Serial.print(" value: ");
+  Serial.print(value, DEC);
+  Serial.print(" Accum: ");
+  Serial.println(accum);
+#endif
+  return accum;
 }
 
 void printJSONBeginObject(char *name)
@@ -421,6 +462,19 @@ void printAddress(DeviceAddress deviceAddress)
 
 float getWaterTemperature(DeviceAddress deviceAddress)
 {
-  oneWireTempSensors.requestTemperaturesByAddress(deviceAddress);
-  return oneWireTempSensors.getTempC(deviceAddress);
+  if (WAIT_FOR_WATER_TEMPERATURE) {
+    oneWireTempSensors.requestTemperaturesByAddress(deviceAddress);
+    lastWaterTemperature = oneWireTempSensors.getTempC(deviceAddress);
+  }
+  else {
+    unsigned long tNow = millis();
+    if (tNow - tLastWaterTemperatureRequest > delayReadWaterThermometer) {
+      lastWaterTemperature = oneWireTempSensors.getTempC(deviceAddress);
+      // initiate another read request right away
+      oneWireTempSensors.requestTemperaturesByAddress(deviceAddress);
+      tLastWaterTemperatureRequest = millis();
+    }
+  }
+  
+  return lastWaterTemperature;
 }

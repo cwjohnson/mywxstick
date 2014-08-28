@@ -15,6 +15,7 @@ Observation::Observation (char *n)
    altimeterCnt = 0;
    seaLevelPressureCnt = 0;
    tempWaterCnt = 0;
+   precipAccum = 0.0;
 }
 
 void Observation::reset(void)
@@ -25,6 +26,7 @@ void Observation::reset(void)
   altimeterCnt = 0;
   seaLevelPressureCnt = 0;
   tempWaterCnt = 0;
+  precipAccum = 0.0;
 }
 
 void Observation::addTempAir(float t)
@@ -63,6 +65,11 @@ void Observation::addSeaLevelPressure(float slp)
   else                             seaLevelPressure = slp; 
 }
 
+void Observation::addPrecip(float val)
+{
+  precipAccum += val;
+}
+
 void Observation::serialWriteJSON()
 {
   printJSONBeginObject(name);
@@ -72,6 +79,7 @@ void Observation::serialWriteJSON()
   printJSONValue("altimeter", (altimeterCnt > 0) ? altimeter / (float)altimeterCnt : 0.0);
   printJSONValue("seaLevelPressure", (seaLevelPressureCnt > 0) ? seaLevelPressure / (float)seaLevelPressureCnt : 0.0);
   printJSONValue("temperatureWater", (tempWaterCnt > 0) ? tempWater / (float)tempWaterCnt : 0.0);
+  printJSONValue("precipAccumulation", precipAccum);
   printJSONEndObject();
 }
 

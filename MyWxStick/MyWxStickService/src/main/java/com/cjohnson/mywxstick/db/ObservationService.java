@@ -26,7 +26,7 @@ public class ObservationService {
 		try {
 			
 			PreparedStatement preparedStatement = connection
-					.prepareStatement("insert into observations_test(time,temperature_air,humidity,temperature_water,wind_speed,altimeter,sea_level_pressure,ob_type) values (?, ?, ?, ?, ?, ?, ?, ?)");
+					.prepareStatement("insert into observations_test(time,temperature_air,humidity,temperature_water,wind_speed,altimeter,sea_level_pressure,precip,ob_type) values (?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			// Parameters start with 1
 			preparedStatement.setTimestamp(1, new Timestamp(ob.getObTime().getTime()));
 			preparedStatement.setFloat(2, ob.getTemperatureAir());
@@ -35,7 +35,8 @@ public class ObservationService {
 			preparedStatement.setFloat(5, ob.getWindSpeed());
 			preparedStatement.setFloat(6, ob.getAltimeter());
 			preparedStatement.setFloat(7, ob.getSeaLevelPressure());
-			preparedStatement.setInt(8, ob.getObservationType().ordinal());
+			preparedStatement.setFloat(8, ob.getPrecipAccumulation());
+			preparedStatement.setInt(9, ob.getObservationType().ordinal());
 			preparedStatement.executeUpdate();
 
 		} catch (SQLException e) {

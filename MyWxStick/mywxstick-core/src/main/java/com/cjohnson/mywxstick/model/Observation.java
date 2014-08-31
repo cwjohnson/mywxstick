@@ -39,7 +39,8 @@ public class Observation implements Serializable {
 
 	private Float Altimeter = MISSING_VALUE;
 	private Float SeaLevelPressure = MISSING_VALUE;
-	
+	private Float PrecipAccumulation = MISSING_VALUE;
+
 	private ObservationType ObservationType = null;
 	
 	public Observation() {
@@ -160,5 +161,13 @@ public class Observation implements Serializable {
 
 	public void setSeaLevelPressure(Float SeaLevelPressure) {
 		this.SeaLevelPressure = SeaLevelPressure;
+	}
+
+	public Float getPrecipAccumulation() {
+		return PrecipAccumulation;
+	}
+
+	public void setPrecipAccumulation(Float PrecipAccumulation) {
+		this.PrecipAccumulation = PrecipAccumulation;
 	}
 }

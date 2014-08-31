@@ -41,8 +41,18 @@ public class ArduinoObservationHandler extends ArduinoTextLineHandler {
 	public void handleData(String line) {
 		logger.debug(line);
 		
+		if (! ArduinoLineSanityCheck.sanityCheck(line)) {
+			logger.info("Invalid line: [" + line + "]");
+			return;
+		}
+		
 		// Attempt to make an observation
 		Observation ob = Observation.MakeObservationFromJSON (line);
+		
+		if (ob == null) {
+			logger.info("Observation Factory failed from json: [" + line + "]");
+			return;			
+		}
 		
 		StringEntity postEntity = new StringEntity(line, ContentType.create("text/json", "UTF-8"));
 		

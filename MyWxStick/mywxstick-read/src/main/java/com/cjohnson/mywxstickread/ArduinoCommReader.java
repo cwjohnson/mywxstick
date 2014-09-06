@@ -128,12 +128,16 @@ public class ArduinoCommReader {
 	{
 		Logger logger = LoggerFactory.getLogger(ArduinoCommReader.class);
 	
+		String device = "/dev/tty.usbmodemfa131";
+		if (args.length > 0) {
+			device = args[0];
+		}
 		while (true) {
 			ArduinoCommReader acr = new ArduinoCommReader();
 			BlockingDeque<String> queue = new LinkedBlockingDeque<String>(128);
 			ArduinoObservationHandler obHandler = new ArduinoObservationHandler(queue); 
 			try {
-				acr.DoCommRead("/dev/tty.usbmodemfa141", queue);
+				acr.DoCommRead(device, queue);
 				while (true)
 				{
 					Thread.sleep(1000);

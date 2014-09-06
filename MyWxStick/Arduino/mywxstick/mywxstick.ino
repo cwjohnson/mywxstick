@@ -43,8 +43,8 @@ unsigned long tLastWaterTemperatureRequest = 0;
 #define TIPPING_BUCKET_PIN 4
 // tipping bucket quantity (inches) per tip
 #define TIPPING_BUCKET_QUANTITY 0.01
-#define TIPPING_BUCKET_DEBOUNCE_TIME 0.10
-#define TIPPING_BUCKET_SAMPLING_FREQUENCY 50
+#define TIPPING_BUCKET_DEBOUNCE_TIME 0.02
+#define TIPPING_BUCKET_SAMPLING_FREQUENCY 120
 Debounce debounceTippingBucket = Debounce(TIPPING_BUCKET_DEBOUNCE_TIME, TIPPING_BUCKET_SAMPLING_FREQUENCY);
 int lastTippingBucketState = -1;
 int tippingBucketBootstrapSamples = 0;

@@ -7,6 +7,7 @@
 package com.cjohnson.mywxstickread;
 
 import com.cjohnson.mywxstick.model.Observation;
+import com.cjohnson.mywxstick.model.ObservationType;
 import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
 import java.util.logging.Level;
@@ -54,6 +55,15 @@ public class ArduinoObservationHandler extends ArduinoTextLineHandler {
 			return;			
 		}
 		
+
+		switch (ob.getObservationType())
+		{
+			case INSTANTANEOUS_OBSERVATION:
+				return;
+			default:
+				break;
+		}
+		
 		StringEntity postEntity = new StringEntity(line, ContentType.create("text/json", "UTF-8"));
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
@@ -88,6 +98,5 @@ public class ArduinoObservationHandler extends ArduinoTextLineHandler {
 		} catch (IOException ex) {
 			Logger.getLogger(ArduinoObservationHandler.class.getName()).log(Level.SEVERE, null, ex);
 		}
-	}
-	
+	}	
 }

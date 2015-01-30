@@ -1,23 +1,23 @@
 package com.cjohnson.mywxstick.controller;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Date;
-import java.text.SimpleDateFormat;
-
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestBody;
-
 import com.cjohnson.mywxstick.db.ObservationService;
-import com.cjohnson.mywxstick.model.SensorValue;
+import com.cjohnson.mywxstick.model.CurrentConditions;
 import com.cjohnson.mywxstick.model.Observation;
 import com.cjohnson.mywxstick.model.ObservationType;
+import com.cjohnson.mywxstick.model.SensorValue;
+import com.cjohnson.mywxstick.model.TimeSeriesData;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.TimeZone;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -76,6 +76,29 @@ public class ObservationServiceController {
 		return ob;
 	}
 
+	@RequestMapping(value = "/currentcondition/{station}", method = RequestMethod.GET)
+	public Observation getCurrentCondition(@PathVariable String station)
+	{
+		Observation ob = m_obService.getMostCurrentObservation(station);
+		
+		return ob;
+	}
+
+	@RequestMapping(value = "/currentconditions/{station}", method = RequestMethod.GET)
+	public CurrentConditions getCurrentConditions(@PathVariable String station)
+	{
+		CurrentConditions cc = m_obService.getCurrentConditions(station);
+		
+		return cc;
+	}
+	
+	@RequestMapping(value = "/currentcondition/timeseries/{station}/{variable}", method = RequestMethod.GET)
+	public TimeSeriesData getTimeSeriesForVariable(@PathVariable String station, @PathVariable String variable)
+	{
+		TimeSeriesData tsd = m_obService.getTimeSeries(station, variable);
+		
+		return tsd;
+	}
 	/*
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET,headers="Accept=application/json")
 	public User getUser(@PathVariable int id) {

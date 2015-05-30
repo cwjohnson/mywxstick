@@ -7,18 +7,14 @@
 package com.cjohnson.mywxstickread;
 
 import com.cjohnson.mywxstick.model.Observation;
-import com.cjohnson.mywxstick.model.ObservationType;
 import java.io.IOException;
 import java.util.concurrent.BlockingQueue;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpResponseException;
 import org.apache.http.client.ResponseHandler;
-import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
@@ -26,13 +22,14 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 /**
  *
  * @author cjohnson
  */
 public class ArduinoObservationHandler extends ArduinoTextLineHandler {
-	org.slf4j.Logger logger = LoggerFactory.getLogger(ArduinoObservationHandler.class);
+	public final static Logger logger = LoggerFactory.getLogger(ArduinoObservationHandler.class);
 
 	public ArduinoObservationHandler (BlockingQueue q) {
 		super (q);
@@ -67,7 +64,7 @@ public class ArduinoObservationHandler extends ArduinoTextLineHandler {
 		StringEntity postEntity = new StringEntity(line, ContentType.create("text/json", "UTF-8"));
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpPost httpPost = new HttpPost("http://localhost:8084/mywxstick/observice/addob/HAG/");
+		HttpPost httpPost = new HttpPost("http://localhost:8084/mywxstick/observice/addob/test/");
 		httpPost.setEntity(postEntity);
 
 		ResponseHandler<String> rh = new ResponseHandler<String>() {
@@ -96,7 +93,7 @@ public class ArduinoObservationHandler extends ArduinoTextLineHandler {
 		try {
 			String responseString = httpclient.execute(httpPost, rh);
 		} catch (IOException ex) {
-			Logger.getLogger(ArduinoObservationHandler.class.getName()).log(Level.SEVERE, null, ex);
+			logger.equals(ex);
 		}
 	}	
 }

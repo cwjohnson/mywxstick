@@ -30,6 +30,8 @@ public class Observation implements Serializable {
 	@JsonSerialize(using=DateSerializer.class)
 	private Date  ObTime;
 	
+	private String stationId = "";
+
 	private Float TemperatureAir = MISSING_VALUE;
 	private Float Humidity = MISSING_VALUE;
 	private Float TemperatureWater = MISSING_VALUE;
@@ -169,5 +171,13 @@ public class Observation implements Serializable {
 
 	public void setPrecipAccumulation(Float PrecipAccumulation) {
 		this.PrecipAccumulation = PrecipAccumulation;
+	}
+
+	public String getStationId() {
+		return stationId;
+	}
+
+	public void setStationId(String stationId) {
+		this.stationId = stationId;
 	}
 }

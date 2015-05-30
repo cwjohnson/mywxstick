@@ -6,13 +6,6 @@
 
 package com.cjohnson.mywxstick.model;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
-import java.util.Date;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import java.io.Serializable;
 
 /**
@@ -21,9 +14,6 @@ import java.io.Serializable;
  */
 public class CurrentConditions implements Serializable{
 	private static final long serialVersionUID = -7788619177798333712L;
-
-	private static final ObjectMapper m = new ObjectMapper();
-	private static final Logger logger = LoggerFactory.getLogger(Observation.class);
 
 	private Observation currentObservation = null;
 	private Float highTemperatureAir = 0.0F;

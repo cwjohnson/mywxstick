@@ -6,23 +6,15 @@
 
 package com.cjohnson.mywxstick.model;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.DateSerializer;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 public class TimeSeriesData implements Serializable {
-	private static final Logger logger = LoggerFactory.getLogger(TimeSeriesData.class);
 	private static final long serialVersionUID = -7788619177798333713L;
-
-	private static final ObjectMapper m = new ObjectMapper();
 
 	//@JsonSerialize(using=DateSerializer.class)
 	

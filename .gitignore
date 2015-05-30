@@ -3,3 +3,6 @@
 /MyWxStick/MyWxStickService/target/
 /MyWxStick/mywxstick-read/src/main/assemble/
 .DS_Store
+.classpath
+.project
+.settings

@@ -2,19 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.cjohnson</groupId>
 	<artifactId>mywxstick-service</artifactId>
 	<name>MyWxStickService</name>
 	<packaging>war</packaging>
-	<version>1.0.0-BUILD-SNAPSHOT</version>
 	<properties>
-		<java-version>1.7</java-version>
-		<org.springframework-version>4.0.0.RELEASE</org.springframework-version>
-		<org.aspectj-version>1.6.10</org.aspectj-version>
-		<org.slf4j-version>1.6.6</org.slf4j-version>
-        <jackson.databind-version>2.2.3</jackson.databind-version>
 		<com.cjohnson.mywxstick-core-version>1.0.0-SNAPSHOT</com.cjohnson.mywxstick-core-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
 	</properties>
+	
+	<parent>
+        <groupId>com.cjohnson</groupId>
+        <artifactId>mywxstick-parent</artifactId>
+        <version>1.0.0-BUILD-SNAPSHOT</version>
+    </parent>
+    
 	<dependencies>
 		<!-- Spring -->
 		<dependency>
@@ -47,11 +48,13 @@
 		</dependency>
 				
 		<!-- AspectJ -->
+		<!-- 
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
-		</dependency>	
+		</dependency>
+		-->
 		
 		<!-- Logging -->
 		<dependency>
@@ -148,6 +151,10 @@
 	</dependencies>
     <build>
         <plugins>
+        	<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+        	</plugin>
             <plugin>
                 <artifactId>maven-eclipse-plugin</artifactId>
                 <version>2.9</version>
@@ -160,18 +167,6 @@
                     </additionalBuildcommands>
                     <downloadSources>true</downloadSources>
                     <downloadJavadocs>true</downloadJavadocs>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.5.1</version>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                    <compilerArgument>-Xlint:all</compilerArgument>
-                    <showWarnings>true</showWarnings>
-                    <showDeprecation>true</showDeprecation>
                 </configuration>
             </plugin>
             <plugin>

@@ -43,14 +43,14 @@ public class Observation implements Serializable {
 	private Float SeaLevelPressure = MISSING_VALUE;
 	private Float PrecipAccumulation = MISSING_VALUE;
 
-	private ObservationType ObservationType = null;
+	private ObservationType observationType = null;
 	
 	public Observation() {
 	}
 	
 	public Observation (ObservationType obType)
 	{
-		this.ObservationType = obType;
+		this.observationType = obType;
 	}
 
 	public static Observation MakeObservationFromJSON (String json)
@@ -105,11 +105,11 @@ public class Observation implements Serializable {
 	}
 
 	public ObservationType getObservationType() {
-		return ObservationType;
+		return observationType;
 	}
 
 	public void setObservationType(ObservationType ObservationType) {
-		this.ObservationType = ObservationType;
+		this.observationType = ObservationType;
 	}
 	
 	public Date getObTime() {

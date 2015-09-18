@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Project State</title>
+</head>
+<body>
+<p>
+Purpose:
+</p>
+<ul>
+<li>Have Fun</li>
+<li>Learn Something about electronics, circuits and microcontrollers</li>
+<li>Build a wx stick where I can implement any sensor I wish</li>
+<li>I own, store and control the data</li>
+<li>Collect WxData at my vacation home</li>
+</ul>
+
+<p>
+Hardware Components:
+<ul>
+<li>Arduino Uno</li>
+<li>Temperature/Humidity Sensor</li>
+<li>Pressure/Altitude Sensor</li>
+<li>Water Temperature Sensor</li>
+<li>Tipping bucket rain</li>
+</ul>
+<p>
+Coming soon:
+<ul>
+<li>Anemometer</li>
+<li>Water depth</li>
+</ul>
+
+<p>
+
+Software Components:
+<ul>
+Auduino sketch to read sensors and aggregate data
+<ul><li>Instantaneous</li><li>1-minute aggregate</li><li>5-minute aggregate</li>
+</ul>
+Web Service API: Endpoints for:
+<ul>
+<li>collecting above mentioned data aggregates.</li>
+<li>data in json</li>
+</ul>
+<p>
+Java application to read Arduino.
+<ul>
+<li>Parse Arduino Data</li>
+<li>Post data to Web Service API</li>
+</ul>
+<p>
+Database to store data
+<ul>
+<li>PostgreSQL</li>
+</ul>
+</ul>
+</body>
+</html>

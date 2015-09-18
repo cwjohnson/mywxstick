@@ -67,6 +67,7 @@ $(function () {
 			updateElementJQ ('td#watertemperature', (cc.currentObservation.temperatureWater * 9.0 / 5.0 + 32.0).toFixed(1), "°F");
 			updateElementJQ ('td#watertemperaturemax', (cc.highTemperatureWater * 9.0 / 5.0 + 32.0).toFixed(1), "°F");
 			updateElementJQ ('td#watertemperaturemin', (cc.lowTemperatureWater * 9.0 / 5.0 + 32.0).toFixed(1), "°F");
+			updateElementJQ ('td#preciptoday', cc.precipToday.toFixed(2), "in");
 		}
 	};
 	
@@ -281,6 +282,9 @@ $(function () {
 	                },
 	                title: {
 						text: 'Hourly',
+						style: {
+							color: Highcharts.getOptions().colors[0]
+						}
 					},
 					lineColor: '#FF0000',
 					min: 0,
@@ -294,6 +298,9 @@ $(function () {
 					},
 					title: {
 						text: 'Total',
+						style: {
+							color: Highcharts.getOptions().colors[1]
+						}
 					},
 					opposite: true,
 					lineColor: '#0000FF',
@@ -328,14 +335,14 @@ $(function () {
 					type: 'column',
 					data: precipdata,
 	                tooltip: {
-	                    valueSuffix: 'In'
+	                    valueSuffix: 'in'
 	                }
 	            }, {
 					name: "Total",
 					type: 'spline',
 					data: runningsumdata,
 	                tooltip: {
-	                    valueSuffix: 'In'
+	                    valueSuffix: 'in'
 	                }
                 }],
 			});

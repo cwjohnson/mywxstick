@@ -64,7 +64,7 @@ public class ArduinoObservationHandler extends ArduinoTextLineHandler {
 		StringEntity postEntity = new StringEntity(line, ContentType.create("text/json", "UTF-8"));
 		
 		CloseableHttpClient httpclient = HttpClients.createDefault();
-		HttpPost httpPost = new HttpPost("http://localhost:8084/mywxstick/observice/addob/test/");
+		HttpPost httpPost = new HttpPost("http://localhost:8080/mywxstick/observice/addob/test/");
 		httpPost.setEntity(postEntity);
 
 		ResponseHandler<String> rh = new ResponseHandler<String>() {

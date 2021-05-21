@@ -24,6 +24,7 @@ public class CurrentConditions implements Serializable{
 	private Float lowHumidity = 0.0F;
 	private String pressureTendency = "S";		// S - Steady; R - Rising ; F - Falling
 	private Float precipOneHour = 0.0F;
+	private Float precipToday = 0.0F;
 	
 	public Observation getCurrentObservation() {
 		return currentObservation;
@@ -96,4 +97,13 @@ public class CurrentConditions implements Serializable{
 	public void setPrecipOneHour(Float precipOneHour) {
 		this.precipOneHour = precipOneHour;
 	}
+
+	public Float getPrecipToday() {
+		return precipToday;
+	}
+
+	public void setPrecipToday(Float precipToday) {
+		this.precipToday = precipToday;
+	}
+	
 }

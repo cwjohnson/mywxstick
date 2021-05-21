@@ -5,7 +5,7 @@ extern void printJSONValue(char *name, float value);
 extern void printJSONBeginObject(char *name);
 extern void printJSONEndObject();
 
-Observation::Observation (char *n)
+Observation::Observation (const char *n)
 {
    name = n;
    tempAirCnt = 0;
@@ -102,4 +102,3 @@ void Observation::printJSONValue(char *name, float value)
   Serial.print(",");
 }
 */
-

@@ -149,7 +149,20 @@
 			<scope>test</scope>
 		</dependency>        
 	</dependencies>
-    <build>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache.snapshots</id>
+			<name>Apache Snapshots</name>
+			<url>http://repository.apache.org/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<build>
         <plugins>
         	<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -177,6 +190,33 @@
                     <mainClass>org.test.int1.Main</mainClass>
                 </configuration>
             </plugin>
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<executions>
+					<execution>
+						<id>tomcat-run</id>
+						<goals>
+							<goal>exec-war-only</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<path>/mywxstick</path>
+							<!-- optional, needed only if you want to use a preconfigured server.xml file -->
+							<!--
+							<serverXml>src/main/tomcatconf/server.xml</serverXml>
+							-->
+							<!-- optional values which can be configurable -->
+							<!--
+							<attachArtifactClassifier>default value is exec-war but you can customize</attachArtifactClassifier>
+							<attachArtifactClassifierType>default value is jar</attachArtifactClassifierType>
+							-->
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
         </plugins>
     </build>
 </project>

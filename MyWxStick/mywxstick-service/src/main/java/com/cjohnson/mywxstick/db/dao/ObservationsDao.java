@@ -62,10 +62,10 @@ public class ObservationsDao {
 	private static final String CURRENT_COND_SQL =
 			  "select date(time_ts + s.utc_dst_offset), min(temperature_air)"
 			+ ",max(temperature_air), min(temperature_water)"
-			+ ",max(temperature_water), min(humidity), max(humidity)"
+			+ ",max(temperature_water), min(humidity), max(humidity), sum(precip)"
 			+ " from observations, stations s"
 			+ " where date(time_ts + s.utc_dst_offset) = date(now() - interval '12:00:00')"
-			+ " and station_id = s.id"
+			+ " and station_id = s.id and ob_type=1"
 			+ " group by date(time_ts + s.utc_dst_offset)";
 		
 	@Autowired
@@ -258,6 +258,7 @@ public class ObservationsDao {
 			cc.setLowTemperatureWater(rs.getFloat(4));
 			cc.setHighHumidity(rs.getFloat(7));
 			cc.setLowHumidity(rs.getFloat(6));
+			cc.setPrecipToday(rs.getFloat(8));
 			
 			return cc;
 		}

@@ -27,7 +27,7 @@ private:
   void printJSONValue(char *name, float value);
   */
 public:
-  Observation (char *name);
+  Observation (const char *name);
   
   void addTempAir(float t);
   void addHumidity(float h);

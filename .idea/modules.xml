@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/mywxstick.iml" filepath="$PROJECT_DIR$/.idea/mywxstick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mywxstick-core/mywxstick-core.iml" filepath="$PROJECT_DIR$/mywxstick-core/mywxstick-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mywxstick-read/mywxstick-read.iml" filepath="$PROJECT_DIR$/mywxstick-read/mywxstick-read.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mywxstick-service/mywxstick-service.iml" filepath="$PROJECT_DIR$/mywxstick-service/mywxstick-service.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+	<!-- We want the application to default to UTC...this bean does that -->
+	<bean id="setApplicationTimeZoneToUTCBean" class="com.cjohnson.mywxstick.utility.ApplicationTimeZone">
+		<constructor-arg type="java.lang.String" value="UTC" />
+	</bean>
+	
+	<bean id="observationsDaoBean" class="com.cjohnson.mywxstick.db.dao.ObservationsDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="observationServiceBean" class="com.cjohnson.mywxstick.Services.ObservationService">
+		<property name="observationsDao" ref="observationsDaoBean" />
+		<property name="stationService" ref="stationServiceBean" />
+	</bean>
+	
+	<bean id="stationsDaoBean" class="com.cjohnson.mywxstick.db.dao.StationsDao">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="stationServiceBean" class="com.cjohnson.mywxstick.Services.StationService" init-method="init" lazy-init="false">
+		<property name="stationsDao" ref="stationsDaoBean" />
+	</bean>
+	
+	<!-- /usr/libexec/ApplicationFirewall/socketfilterfw unblockapp /Library/PostgreSQL/9.3/bin/postgres -->
+	<!-- postgresql datasource -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="org.postgresql.Driver" />
+		<property name="url" value="jdbc:postgresql://mywxstick-sql/mywxstick" />
+		<property name="username" value="cjohnson" />
+		<property name="password" value="beGone18" />
+	</bean>
+</beans>

@@ -1,0 +1,1320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="114ac229-6e62-4b9f-b6aa-ed8241c43274" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/CurrentConditions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/FiveMinuteObservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/HourlyObservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/InstantaneousObservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/Observation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/ObservationType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/OneMinuteObservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/SensorValue.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/Station.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/TimeSeriesData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/TimeSeriesData2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/Unit.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-core/src/main/java/com/cjohnson/mywxstick/util/TimeZoneApplicator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/RXTXcomm.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/hs_err_pid1813.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/install_rxtx.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/librxtxSerial.jnilib" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/nbactions.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/rxtx-2.2-bin.so" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoCommReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoLineSanityCheck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoObservationHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoTextLineHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/RingBuffer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/TwoWaySerialComm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-read/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/.tomcat_executable_archive.timestamp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/conf/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-16" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-17" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-18" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-19" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-20" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-21" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-22" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-23" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-24" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-25" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-26" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/logs/access_log.2018-07-27" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick.war" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/META-INF/MANIFEST.MF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/META-INF/maven/com.cjohnson/mywxstick-service/pom.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/META-INF/maven/com.cjohnson/mywxstick-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/Services/ObservationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/Services/StationService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/controller/ObservationServiceController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/db/dao/ObservationsDao$CurrentConditionsRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/db/dao/ObservationsDao$ObservationRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/db/dao/ObservationsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/db/dao/StationsDao$StationRowMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/db/dao/StationsDao.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/com/cjohnson/mywxstick/utility/ApplicationTimeZone.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/classes/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/aopalliance-1.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/jackson-annotations-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/jackson-core-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/jackson-databind-2.2.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/javax.inject-1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/jcl-over-slf4j-1.6.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/jstl-1.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/log4j-1.2.15.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/mysql-connector-java-5.1.31.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/mywxstick-core-1.0.0-SNAPSHOT.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/postgresql-9.3-1103-jdbc41.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/slf4j-api-1.6.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/slf4j-log4j12-1.6.6.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-aop-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-beans-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-context-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-core-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-expression-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-jdbc-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-tx-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-web-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/lib/spring-webmvc-4.0.0.RELEASE.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/views/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/css/currentconditions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/currentconditions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/ice-on-latest-to-earliest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/images/hardware.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/images/refresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/images/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/latestob.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/projectstate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/3d-column-interactive/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/3d-column-null-values/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/3d-column-stacking-grouping/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/3d-pie-donut/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/3d-pie/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/3d-scatter-draggable/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/area-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/area-inverted/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/area-missing/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/area-negative/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/area-stacked-percent/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/area-stacked/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/arearange-line/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/arearange/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/areaspline/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/bar-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/bar-negative-stack/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/bar-stacked/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/box-plot/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/bubble-3d/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/bubble/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-drilldown/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-negative/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-parsed/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-placement/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-rotated-labels/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-stacked-and-grouped/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-stacked-percent/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/column-stacked/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/columnrange/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/combo-dual-axes/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/combo-meteogram/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/combo-multi-axes/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/combo-regression/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/combo/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/dynamic-click-to-add/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/dynamic-master-detail/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/dynamic-update/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/error-bar/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/funnel/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/gauge-clock/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/gauge-dual/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/gauge-solid/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/gauge-speedometer/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/gauge-vu-meter/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/heatmap-canvas/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/heatmap/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/line-ajax/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/line-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/line-labels/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/line-log-axis/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/line-time-series/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-donut/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-drilldown/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-gradient/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-legend/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-monochrome/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pie-semi-circle/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/polar-spider/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/polar-wind-rose/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/polar/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/pyramid/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/renderer/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/scatter/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/sparkline/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/spline-inverted/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/spline-irregular-time/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/spline-plot-bands/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/spline-symbols/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/examples/waterfall/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/converter/SVGConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/converter/SVGConverterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/AbstractPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/BlockingQueuePool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ObjectPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/PoolException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ServerObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/ServerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/TimeOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/util/MimeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/util/TempDir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/app-convert.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-3d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/jquery.1.9.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/solid-gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/spring-convert.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/controller/ExportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/controller/ZeroRequestParameterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/filter/CorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/interceptor/RequestInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/service/MonitorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/callback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/lexl.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/pages/demo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/app-convert.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/export-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/Highcharts-icon-160px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/codemirror.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/javascript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/typescript.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/xml/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/xml/xml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/closetag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/foldcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/formatting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/javascript-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/loadmode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/match-highlighter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/multiplex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/overlay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/pig-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/runmode-standalone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/runmode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/searchcursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/simple-hint.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/simple-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/xml-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/jquery-1.11.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/java/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-3d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/jquery.1.9.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/phantomjs/solid-gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/exporting-server/php/php-batik/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/gfx/vml-radial-gradient.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/graphics/meteogram-symbols-30px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/graphics/skies.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/graphics/snow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/graphics/sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/adapters/standalone-framework.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/adapters/standalone-framework.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts-3d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts-3d.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts-all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts-more.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/highcharts.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/canvas-tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/canvas-tools.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/data.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/drilldown.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/exporting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/exporting.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/funnel.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/heatmap.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/no-data-to-display.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/solid-gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/modules/solid-gauge.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/dark-blue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/dark-green.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/dark-unica.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/gray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/grid-light.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/sand-signika.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/Highcharts-4.0.3/js/themes/skies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/currentconditions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-1.11.1/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-1.11.1/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-1.11.1/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-1.11.1/dist/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-2.1.1/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-2.1.1/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-2.1.1/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.extract/webapps/mywxstick/scripts/jquery-2.1.1/dist/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/.springBeans" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/nb-configuration.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/java/com/cjohnson/mywxstick/Services/ObservationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/java/com/cjohnson/mywxstick/Services/StationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/java/com/cjohnson/mywxstick/controller/ObservationServiceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/java/com/cjohnson/mywxstick/db/dao/ObservationsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/java/com/cjohnson/mywxstick/db/dao/StationsDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/java/com/cjohnson/mywxstick/utility/ApplicationTimeZone.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/resources/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/WEB-INF/spring/root-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/WEB-INF/views/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/css/currentconditions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/currentconditions.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/ice-on-latest-to-earliest.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/images/hardware.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/images/refresh.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/images/sunset.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/latestob.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/projectstate.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-column-interactive/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-column-null-values/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-column-stacking-grouping/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-pie-donut/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-pie/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-scatter-draggable/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-inverted/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-missing/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-negative/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-stacked-percent/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-stacked/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/arearange-line/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/arearange/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/areaspline/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bar-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bar-negative-stack/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bar-stacked/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/box-plot/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bubble-3d/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bubble/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-drilldown/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-negative/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-parsed/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-placement/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-rotated-labels/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-stacked-and-grouped/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-stacked-percent/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-stacked/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/columnrange/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-dual-axes/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-meteogram/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-multi-axes/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-regression/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/dynamic-click-to-add/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/dynamic-master-detail/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/dynamic-update/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/error-bar/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/funnel/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-clock/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-dual/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-solid/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-speedometer/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-vu-meter/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/heatmap-canvas/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/heatmap/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-ajax/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-labels/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-log-axis/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-time-series/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-basic/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-donut/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-drilldown/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-gradient/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-legend/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-monochrome/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-semi-circle/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/polar-spider/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/polar-wind-rose/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/polar/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pyramid/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/renderer/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/scatter/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/sparkline/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-inverted/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-irregular-time/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-plot-bands/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-symbols/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/waterfall/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/converter/SVGConverter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/converter/SVGConverterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/AbstractPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/BlockingQueuePool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ObjectPool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/PoolException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ServerObjectFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/ServerState.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/TimeOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/util/MimeType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/util/TempDir.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/app-convert.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-3d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/jquery.1.9.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/solid-gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/spring-convert.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/controller/ExportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/controller/ZeroRequestParameterException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/filter/CorsFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/interceptor/RequestInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/service/MonitorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/META-INF/context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/callback.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/lexl.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/pages/demo.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/pages/error.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/app-convert.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/export-servlet.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/spring-context.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/Highcharts-icon-160px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/css/demo.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/codemirror.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/codemirror.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/javascript.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/typescript.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/xml/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/xml/xml.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/closetag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/dialog.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/dialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/foldcode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/formatting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/javascript-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/loadmode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/match-highlighter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/multiplex.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/overlay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/pig-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/runmode-standalone.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/runmode.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/searchcursor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/simple-hint.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/simple-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/xml-hint.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/jquery-1.11.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-3d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-convert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/jquery.1.9.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/map.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/solid-gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/php/php-batik/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/gfx/vml-radial-gradient.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/meteogram-symbols-30px.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/skies.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/snow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/sun.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/index.htm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/adapters/standalone-framework.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/adapters/standalone-framework.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-3d.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-3d.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-all.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-more.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-more.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/canvas-tools.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/canvas-tools.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/data.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/data.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/drilldown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/drilldown.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/exporting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/exporting.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/funnel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/funnel.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/heatmap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/heatmap.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/no-data-to-display.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/no-data-to-display.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/solid-gauge.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/solid-gauge.src.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/dark-blue.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/dark-green.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/dark-unica.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/gray.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/grid-light.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/grid.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/sand-signika.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/skies.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/currentconditions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/dist/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/.bower.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/dist/jquery.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/dist/jquery.min.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mywxstick-service/src/test/resources/log4j.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/DallasTemperature.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/DallasTemperature.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/README.TXT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/change.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/Alarm/Alarm.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/AlarmHandler/AlarmHandler.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/Multiple/Multiple.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/Simple/Simple.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/Single/Single.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/Tester/Tester.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/WaitForConversion/WaitForConversion.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/examples/WaitForConversion2/WaitForConversion2.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/DallasTemperature/keywords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/OneWire/OneWire.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/OneWire/OneWire.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/OneWire/examples/DS18x20_Temperature/DS18x20_Temperature.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/OneWire/examples/DS2408_Switch/DS2408_Switch.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/OneWire/examples/DS250x_PROM/DS250x_PROM.pde" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/OneWire/keywords.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/Libraries/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/debounce.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/debounce.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/dht.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/dht.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/mywxstick.ino" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/observation.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/Arduino/mywxstick/observation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/CurrentConditions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/FiveMinuteObservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/HourlyObservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/InstantaneousObservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/Observation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/ObservationType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/OneMinuteObservation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/SensorValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/Station.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/TimeSeriesData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/TimeSeriesData2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/model/Unit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-core/src/main/java/com/cjohnson/mywxstick/util/TimeZoneApplicator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/RXTXcomm.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/install_rxtx.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/librxtxSerial.jnilib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/nbactions.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/rxtx-2.2-bin.so" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoCommReader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoLineSanityCheck.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoObservationHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoTextLineHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/RingBuffer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/TwoWaySerialComm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-read/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/.springBeans" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/Users/cjohnson/src/MyWxStick_fetch_api/MyWxStick/MyWxStickService/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/Users/cjohnson/src/MyWxStick_fetch_api/MyWxStick/MyWxStickService/target/m2e-wtp/web-resources/META-INF/maven/com.cjohnson/mywxstick-sevice/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/Users/cjohnson/src/MyWxStick_fetch_api/MyWxStick/MyWxStickService/target/m2e-wtp/web-resources/META-INF/maven/com.cjohnson/mywxstick-sevice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/nb-configuration.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/java/com/cjohnson/mywxstick/Services/ObservationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/java/com/cjohnson/mywxstick/Services/StationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/java/com/cjohnson/mywxstick/controller/ObservationServiceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/java/com/cjohnson/mywxstick/db/dao/ObservationsDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/java/com/cjohnson/mywxstick/db/dao/StationsDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/java/com/cjohnson/mywxstick/utility/ApplicationTimeZone.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/resources/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/resources/log4j.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/WEB-INF/views/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/css/currentconditions.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/currentconditions.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/ice-on-latest-to-earliest.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/images/hardware.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/images/refresh.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/images/sunset.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/latestob.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/projectstate.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-column-interactive/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-column-null-values/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-column-stacking-grouping/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-pie-donut/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-pie/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/3d-scatter-draggable/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-basic/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-inverted/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-missing/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-negative/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-stacked-percent/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/area-stacked/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/arearange-line/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/arearange/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/areaspline/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bar-basic/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bar-negative-stack/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bar-stacked/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/box-plot/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bubble-3d/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/bubble/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-basic/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-drilldown/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-negative/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-parsed/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-placement/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-rotated-labels/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-stacked-and-grouped/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-stacked-percent/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/column-stacked/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/columnrange/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-dual-axes/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-meteogram/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-multi-axes/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo-regression/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/combo/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/dynamic-click-to-add/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/dynamic-master-detail/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/dynamic-update/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/error-bar/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/funnel/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-clock/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-dual/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-solid/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-speedometer/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/gauge-vu-meter/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/heatmap-canvas/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/heatmap/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-ajax/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-basic/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-labels/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-log-axis/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/line-time-series/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-basic/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-donut/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-drilldown/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-gradient/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-legend/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-monochrome/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pie-semi-circle/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/polar-spider/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/polar-wind-rose/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/polar/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/pyramid/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/renderer/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/scatter/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/sparkline/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-inverted/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-irregular-time/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-plot-bands/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/spline-symbols/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/examples/waterfall/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/converter/SVGConverter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/converter/SVGConverterException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/AbstractPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/BlockingQueuePool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ObjectPool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/PoolException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/pool/ServerObjectFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/ServerState.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/server/TimeOut.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/util/MimeType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/java/com/highcharts/export/util/TempDir.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/app-convert.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-convert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/jquery.1.9.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/phantomjs/solid-gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/src/main/resources/spring-convert.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/app-convert.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/converter/SVGConverter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/converter/SVGConverterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/AbstractPool$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/AbstractPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/BlockingQueuePool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/ObjectFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/ObjectPool.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/PoolException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/ServerObjectFactory$PortStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/pool/ServerObjectFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/server/Server$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/server/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/server/ServerState.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/server/TimeOut.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/util/MimeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/com/highcharts/export/util/TempDir.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/highcharts-3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/highcharts-convert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/highstock.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/jquery.1.9.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/phantomjs/solid-gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/classes/spring-convert.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/highcharts-export-convert.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-convert/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/controller/ExportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/controller/ZeroRequestParameterException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/filter/CorsFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/interceptor/RequestInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/java/com/highcharts/export/service/MonitorService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/resources/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/callback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/jspf/lexl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/pages/demo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/pages/error.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/app-convert.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/export-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/spring/spring-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/Highcharts-icon-160px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/javascript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/javascript/typescript.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/xml/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/mode/xml/xml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/closetag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/dialog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/dialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/foldcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/formatting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/javascript-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/loadmode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/match-highlighter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/multiplex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/overlay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/pig-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/runmode-standalone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/runmode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/searchcursor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/simple-hint.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/simple-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/codemirror/util/xml-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/src/main/webapp/resources/lib/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/classes/com/highcharts/export/controller/ExportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/classes/com/highcharts/export/controller/ZeroRequestParameterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/classes/com/highcharts/export/filter/CorsFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/classes/com/highcharts/export/interceptor/RequestInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/classes/com/highcharts/export/service/MonitorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/META-INF/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/classes/com/highcharts/export/controller/ExportController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/classes/com/highcharts/export/controller/ZeroRequestParameterException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/classes/com/highcharts/export/filter/CorsFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/classes/com/highcharts/export/interceptor/RequestInterceptor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/classes/com/highcharts/export/service/MonitorService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/classes/log4j.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/jspf/callback.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/jspf/config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/jspf/lexl.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/aopalliance-1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/asm-3.3.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/cglib-2.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/commons-codec-1.7.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/commons-fileupload-1.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/commons-io-1.3.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/commons-lang-2.5.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/commons-logging-1.1.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/gson-2.2.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/highcharts-export-convert-2.1.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/log4j-1.2.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-aop-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-beans-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-context-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-core-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-expression-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-web-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/spring-webmvc-3.2.0.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/lib/standard-1.1.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/pages/demo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/pages/error.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/spring/app-convert.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/spring/export-servlet.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/spring/spring-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/Highcharts-icon-160px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/css/demo.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/codemirror.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/codemirror.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/mode/javascript/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/mode/javascript/javascript.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/mode/javascript/typescript.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/mode/xml/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/mode/xml/xml.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/closetag.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/dialog.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/dialog.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/foldcode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/formatting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/javascript-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/loadmode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/match-highlighter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/multiplex.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/overlay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/pig-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/runmode-standalone.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/runmode.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/searchcursor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/simple-hint.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/simple-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/codemirror/util/xml-hint.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/highcharts-export-web/resources/lib/jquery-1.11.0.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/jsp/org/apache/jsp/WEB_002dINF/pages/demo_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/jsp/org/apache/jsp/WEB_002dINF/pages/error_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_4e4bf147_145d14e0e22__8000_00001931.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_776ee455_1453bb181b6__8000_00007880.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_776ee455_1453bb181b6__8000_00007883.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_776ee455_1453bb181b6__8000_00007886.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_776ee455_1453bb181b6__8000_00007889.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00003155.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00003206.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00005924.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00006239.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00007184.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00007754.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload__6795ead4_1458e102cdd__8000_00008018.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_cf7d419_1454f9ef8a4__8000_00000014.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_cf7d419_1454f9ef8a4__8000_00000017.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_cf7d419_1454f9ef8a4__8000_00000020.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_cf7d419_1454f9ef8a4__8000_00000023.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_cf7d419_1454f9ef8a4__8000_00000026.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/highcharts-export-web/target/tmp/upload_cf7d419_1454f9ef8a4__8000_00000029.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/highcharts-export/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/java/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-convert.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/jquery.1.9.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/map.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/phantomjs/solid-gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/exporting-server/php/php-batik/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/gfx/vml-radial-gradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/meteogram-symbols-30px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/skies.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/snow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/graphics/sun.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/adapters/standalone-framework.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/adapters/standalone-framework.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-3d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-3d.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-all.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-more.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts-more.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/highcharts.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/canvas-tools.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/canvas-tools.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/data.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/data.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/drilldown.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/drilldown.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/exporting.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/exporting.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/funnel.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/funnel.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/heatmap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/heatmap.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/no-data-to-display.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/no-data-to-display.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/solid-gauge.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/modules/solid-gauge.src.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/dark-blue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/dark-green.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/dark-unica.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/gray.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/grid-light.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/grid.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/sand-signika.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/Highcharts-4.0.3/js/themes/skies.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/currentconditions.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/.bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/dist/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/dist/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-1.11.1/dist/jquery.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/.bower.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/dist/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/dist/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/main/webapp/scripts/jquery-2.1.1/dist/jquery.min.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/src/test/resources/log4j.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/Services/ObservationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/Services/StationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/controller/ObservationServiceController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/db/dao/ObservationsDao$CurrentConditionsRowMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/db/dao/ObservationsDao$ObservationRowMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/db/dao/ObservationsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/db/dao/StationsDao$StationRowMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/db/dao/StationsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/com/cjohnson/mywxstick/utility/ApplicationTimeZone.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/classes/log4j.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/m2e-wtp/web-resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/mywxstick-service/target/test-classes/log4j.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyWxStick/pom.xml" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/mywxstick-read/target/" />
+    <ignored path="$PROJECT_DIR$/mywxstick-core/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/mywxstick-service/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="ArduinoCommReader.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoCommReader.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1075">
+              <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand />
+      <select />
+    </treeState>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="119" />
+    <option name="y" value="36" />
+    <option name="width" value="1400" />
+    <option name="height" value="837" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="mywxstick" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mywxstick" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mywxstick" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mywxstick" type="462c0819:PsiDirectoryNode" />
+              <item name="mywxstick-read" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mywxstick" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mywxstick" type="462c0819:PsiDirectoryNode" />
+              <item name="mywxstick-read" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mywxstick" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mywxstick" type="462c0819:PsiDirectoryNode" />
+              <item name="mywxstick-read" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mywxstick" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mywxstick" type="462c0819:PsiDirectoryNode" />
+              <item name="mywxstick-read" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mywxstick" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mywxstick" type="462c0819:PsiDirectoryNode" />
+              <item name="mywxstick-read" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="mywxstickread" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Maven.MyWxStick Service">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="Arduino Reader" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.cjohnson.mywxstickread.ArduinoCommReader" />
+      <module name="mywxstick-read" />
+      <option name="PROGRAM_PARAMETERS" value="/dev/tty.usbmodem14201" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.cjohnson.mywxstickread.ArduinoCommReader" />
+      <module name="mywxstick-read" />
+      <option name="PROGRAM_PARAMETERS" value="/dev/tty.usbmodem14201" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="MyWxStick Service" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/mywxstick-service" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.Arduino Reader" />
+      <item itemvalue="Maven.MyWxStick Service" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="114ac229-6e62-4b9f-b6aa-ed8241c43274" name="Default" comment="" />
+      <created>1621696822477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1621696822477</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="119" y="36" width="1400" height="837" extended-state="0" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="right" id="Maven Projects" order="3" visible="true" weight="0.33431518" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32911393" />
+      <window_info id="Capture Tool" order="2" />
+      <window_info id="Designer" order="2" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496318" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/mywxstick-read/src/main/java/com/cjohnson/mywxstickread/ArduinoCommReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1075">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>mywxstick</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: aopalliance:aopalliance:1.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

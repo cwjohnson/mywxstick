@@ -1,8 +1,5 @@
-/MyWxStick/mywxstick-core/target/
-/MyWxStick/mywxstick-read/target/
-/MyWxStick/mywxstick-service/target/
-/MyWxStick/mywxstick-read/src/main/assemble/
 .DS_Store
 .classpath
 .project
-.settings
+.settings/
+*/target/
